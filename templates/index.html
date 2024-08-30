@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            color: #555;
+        }
+        input, select {
+            margin-bottom: 16px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        select {
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .prediction-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .prediction-container p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Thyroid Form</h1>
+        <form id="thyroidForm">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex" required>
+                <option value="1">Female</option>
+                <option value="0">Male</option>
+            </select>
+
+            <label for="on_thyroxine">On Thyroxine:</label>
+            <select id="on_thyroxine" name="on_thyroxine" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="query_on_thyroxine">Query on Thyroxine:</label>
+            <select id="query_on_thyroxine" name="query_on_thyroxine" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="on_antithyroid_medication">On Antithyroid Medication:</label>
+            <select id="on_antithyroid_medication" name="on_antithyroid_medication" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="sick">Sick:</label>
+            <select id="sick" name="sick" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="pregnant">Pregnant:</label>
+            <select id="pregnant" name="pregnant" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="thyroid_surgery">Thyroid Surgery:</label>
+            <select id="thyroid_surgery" name="thyroid_surgery" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="I131_treatment">I131 Treatment:</label>
+            <select id="I131_treatment" name="I131_treatment" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="query_hypothyroid">Query Hypothyroid:</label>
+            <select id="query_hypothyroid" name="query_hypothyroid" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="query_hyperthyroid">Query Hyperthyroid:</label>
+            <select id="query_hyperthyroid" name="query_hyperthyroid" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="lithium">Lithium:</label>
+            <select id="lithium" name="lithium" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="goitre">Goitre:</label>
+            <select id="goitre" name="goitre" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="tumor">Tumor:</label>
+            <select id="tumor" name="tumor" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="hypopituitary">Hypopituitary:</label>
+            <select id="hypopituitary" name="hypopituitary" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="psych">Psych:</label>
+            <select id="psych" name="psych" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="TSH_measured">TSH Measured:</label>
+            <select id="TSH_measured" name="TSH_measured" required>
+                <option value="1">True</option>
+                <option value="0">False</option>
+            </select>
+
+            <label for="TSH">TSH Level:</label>
+            <input type="number" id="TSH" name="TSH" step="0.01" required>
+
+            <label for="T3_measured">T3 Measured:</label>
+            <select id="T3_measured" name="T3_measured" required>
+                <option value="1">True</option>
+                <option value="0">False</option>
+            </select>
+
+            <label for="T3">T3 Level:</label>
+            <input type="number" id="T3" name="T3" step="0.01" required>
+
+            <label for="TT4_measured">TT4 Measured:</label>
+            <select id="TT4_measured" name="TT4_measured" required>
+                <option value="1">True</option>
+                <option value="0">False</option>
+            </select>
+
+            <label for="TT4">TT4 Level:</label>
+            <input type="number" id="TT4" name="TT4" step="0.01" required>
+
+            <label for="T4U_measured">T4U Measured:</label>
+            <select id="T4U_measured" name="T4U_measured" required>
+                <option value="1">True</option>
+                <option value="0">False</option>
+            </select>
+
+            <label for="T4U">T4U Level:</label>
+            <input type="number" id="T4U" name="T4U" step="0.01" required>
+
+            <label for="FTI_measured">FTI Measured:</label>
+            <select id="FTI_measured" name="FTI_measured" required>
+                <option value="1">True</option>
+                <option value="0">False</option>
+            </select>
+
+            <label for="FTI">FTI Level:</label>
+            <input type="number" id="FTI" name="FTI" step="0.01" required>
+
+            <label for="TBG_measured">TBG Measured:</label>
+            <select id="TBG_measured" name="TBG_measured" required>
+                <option value="0">False</option>
+            </select>
+
+            <label for="referral_source_STMW">Referral Source - STMW:</label>
+            <select id="referral_source_STMW" name="referral_source_STMW" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="referral_source_SVHC">Referral Source - SVHC:</label>
+            <select id="referral_source_SVHC" name="referral_source_SVHC" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="referral_source_SVHD">Referral Source - SVHD:</label>
+            <select id="referral_source_SVHD" name="referral_source_SVHD" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="referral_source_SVI">Referral Source - SVI:</label>
+            <select id="referral_source_SVI" name="referral_source_SVI" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <label for="referral_source_other">Referral Source - Other:</label>
+            <select id="referral_source_other" name="referral_source_other" required>
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Prediction result placeholder -->
+        <div class="prediction-container">
+            <p id="prediction">{{ prediction_text }}</p>
+        </div>
+    </div>
+
+    <script>
+        function encodeAndSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const form = document.getElementById('thyroidForm');
+            const formData = new FormData(form);
+    
+            // Encoding the data according to your specifications
+            const encodedData = {};
+            formData.forEach((value, key) => {
+                if (key === 'age') {
+                    encodedData[key] = parseInt(value); // No special encoding
+                } else if (['TSH', 'T3', 'TT4', 'T4U', 'FTI'].includes(key)) {
+                    encodedData[key] = parseFloat(value); // Handle float values for these fields
+                } else {
+                    encodedData[key] = parseInt(value); // Handle other fields as integers
+                }
+            });
+    
+            // Create a hidden form and submit it
+            const formElement = document.createElement('form');
+            formElement.method = 'POST';
+            formElement.action = '/predict';
+            
+            for (const key in encodedData) {
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = key;
+                hiddenInput.value = encodedData[key];
+                formElement.appendChild(hiddenInput);
+            }
+    
+            document.body.appendChild(formElement);
+            formElement.submit();
+        }
+    
+        document.getElementById('thyroidForm').addEventListener('submit', encodeAndSubmit);
+    </script>
+</body>
+</html>
