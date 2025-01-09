@@ -58,7 +58,7 @@ Thyroid-Disease-Detection/
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/Thyroid-Disease-Detection.git
+    git clone https://github.com/MohammadAnas5/Thyroid-Disease-Detection.git
     cd Thyroid-Disease-Detection
     ```
 
